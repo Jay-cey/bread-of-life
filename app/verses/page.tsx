@@ -25,7 +25,7 @@ export default function VersesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--background)] pt-24 pb-32 px-6">
+    <div className="min-h-screen bg-[var(--background)] pt-40 pb-32 px-6">
       <div className="max-w-4xl mx-auto">
         <motion.div 
           className="text-center mb-16"

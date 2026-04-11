@@ -8,7 +8,7 @@ export default function WhoIsJesusPage() {
   const [hasPrayed, setHasPrayed] = useState(false);
 
   return (
-    <div className="bg-background min-h-screen pt-20 pb-32">
+    <div className="bg-background min-h-screen pt-40 pb-32">
       <div className="max-w-3xl mx-auto px-6">
         
         {/* Header */}

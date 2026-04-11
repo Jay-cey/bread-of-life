@@ -63,7 +63,7 @@ export default function DailyPage() {
   if (!dailyEntry) return <div className="min-h-screen bg-[var(--background)]"></div>;
 
   return (
-    <div className="min-h-screen bg-[var(--background)] pt-24 pb-32 px-6 flex flex-col items-center justify-center relative">
+    <div className="min-h-screen bg-[var(--background)] pt-40 pb-32 px-6 flex flex-col items-center justify-center relative">
       <motion.div 
         className="max-w-2xl w-full"
         initial={{ opacity: 0, y: 30 }}

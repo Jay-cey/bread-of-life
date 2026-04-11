@@ -18,7 +18,7 @@ export default function JournalPage() {
   const gridArticles = filteredArticles.slice(1);
 
   return (
-    <div className="min-h-screen bg-[var(--background)] pt-24 pb-32 px-6">
+    <div className="min-h-screen bg-[var(--background)] pt-40 pb-32 px-6">
       <div className="max-w-7xl mx-auto">
         
         {/* Header & Filter */}
