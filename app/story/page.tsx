@@ -16,7 +16,7 @@ const chaptersData = [
       "We were made not just to exist, but to walk with Him in the perfection of Eden. Everything was whole. Everything was peace. Love was the rhythm of life."
     ],
     scripture: {
-      verse: "God saw all that he had made, and it was very good.",
+      verse: "God saw all that he had made, and it was very good. And there was evening, and there was morning—the sixth day.",
       reference: "Genesis 1:31",
       commentary: "Creation was an act of profound love. God's design was not flawed or chaotic. We were brought into existence to participate in this perfect goodness."
     }
@@ -31,7 +31,7 @@ const chaptersData = [
       "In reaching for that forbidden autonomy, our ancestors severed the cord of life. The perfect union with the Creator was broken, plunging the world into darkness."
     ],
     scripture: {
-      verse: "For all have sinned and fall short of the glory of God.",
+      verse: "for all have sinned and fall short of the glory of God,",
       reference: "Romans 3:23",
       commentary: "Sin isn't merely breaking a rule; it is a fracture in our relationship with the Author of Life. It is a universal human condition that separates us from true fulfillment."
     }
@@ -76,7 +76,7 @@ const chaptersData = [
       "His resurrection means that the debt is fully cleared. It means that physical death is no longer a permanent end, but a doorway. He conquered the grave to offer us new life."
     ],
     scripture: {
-      verse: "I am the resurrection and the life. The one who believes in me will live, even though they die.",
+      verse: "Jesus said to her, “I am the resurrection and the life. The one who believes in me will live, even though they die;",
       reference: "John 11:25",
       commentary: "Because He lives, the power that raised Him is available to us. We are offered a resurrected life right now, and the profound hope of eternal life."
     }
@@ -91,7 +91,7 @@ const chaptersData = [
       "You don't need to be perfect to receive it. All that is required is faith—to trust in what He has done on the cross, to turn away from a life lived independently of Him, and to surrender your life into His saving hands."
     ],
     scripture: {
-      verse: "For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God.",
+      verse: "For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God—",
       reference: "Ephesians 2:8",
       commentary: "Grace means unmerited favor. There are no religious hoops to jump through. To step into this story, simply talk to God, confess your need for Him, and believe."
     }

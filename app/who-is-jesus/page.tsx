@@ -93,7 +93,7 @@ export default function WhoIsJesusPage() {
             </p>
           </div>
           <ScriptureBlock
-            verse="He himself bore our sins in his body on the cross, so that we might die to sins and live for righteousness; by his wounds you have been healed."
+            verse="“He himself bore our sins” in his body on the cross, so that we might die to sins and live for righteousness; “by his wounds you have been healed.”"
             reference="1 Peter 2:24"
           />
         </motion.section>
