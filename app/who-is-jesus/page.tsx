@@ -60,7 +60,7 @@ export default function WhoIsJesusPage() {
             viewport={{ once: true, amount: 0.3 }}
             className="h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl"
           >
-            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1542408719-74ce0fde095d?q=80&w=1200&auto=format&fit=crop')`}} />
+            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url('/images/sin.jpg')`}} />
           </motion.div>
         </div>
 
@@ -72,7 +72,7 @@ export default function WhoIsJesusPage() {
             viewport={{ once: true, amount: 0.3 }}
             className="h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl order-2 md:order-1"
           >
-            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1490730141103-6cac27fcab94?q=80&w=1200&auto=format&fit=crop')`}} />
+            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url('/images/love.jpg')`}} />
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
@@ -123,7 +123,7 @@ export default function WhoIsJesusPage() {
             viewport={{ once: true, amount: 0.3 }}
             className="h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl"
           >
-            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544829744-8cb23e4215f7?q=80&w=1200&auto=format&fit=crop')`}} />
+            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url('/images/sacrifice.jpg')`}} />
           </motion.div>
         </div>
 
@@ -135,7 +135,7 @@ export default function WhoIsJesusPage() {
             viewport={{ once: true, amount: 0.3 }}
             className="h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl order-2 md:order-1"
           >
-            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=1200&auto=format&fit=crop')`}} />
+            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url('/images/invite.jpg')`}} />
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
