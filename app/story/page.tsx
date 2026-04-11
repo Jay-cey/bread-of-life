@@ -177,6 +177,14 @@ export default function StoryPage() {
     }
   }, []);
 
+  // Keep maxChapterReached in sync as the user scrolls forward in this session
+  useEffect(() => {
+    if (activeChapter > (maxChapterReached ?? 0)) {
+      setMaxChapterReached(activeChapter);
+    }
+  }, [activeChapter, maxChapterReached]);
+
+
   const handleResume = () => {
     if (maxChapterReached) {
       document.getElementById(`chapter-${maxChapterReached}`)?.scrollIntoView({ behavior: 'smooth' });

@@ -188,16 +188,16 @@ export default function Home() {
               </span>
             </FadeIn>
             <div className="relative h-[320px] md:h-auto order-1 md:order-2 overflow-hidden">
-              <div className="absolute inset-0 bg-[url('images/journal2.jpg')] bg-cover bg-center group-hover:scale-105 transition-transform duration-1000 ease-out" />
+              <div className="absolute inset-0 bg-[url('/images/journal2.jpg')] bg-cover bg-position-[center_50%] group-hover:scale-105 transition-transform duration-1000 ease-out" />
             </div>
           </div>
         </Link>
 
         {/* IV — Who is Jesus | NAVY, image left */}
         <Link href="/who-is-jesus" className="group block">
-          <div className="bg-[#0B1437] grid grid-cols-1 md:grid-cols-2 border-t border-white/[0.06] group-hover:border-[#C9A84C]/30 transition-colors duration-500 min-h-[460px]">
+          <div className="bg-[#0B1437] grid grid-cols-1 md:grid-cols-2 border-t border-white/6 group-hover:border-[#C9A84C]/30 transition-colors duration-500 min-h-[460px]">
             <div className="relative h-[320px] md:h-auto overflow-hidden order-1">
-              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=1544&auto=format&fit=crop')] bg-cover bg-[center_20%] group-hover:scale-105 transition-transform duration-1000 ease-out" />
+              <div className="absolute inset-0 bg-[url('/images/cross.jpg')] bg-cover bg-position-[center_20%] group-hover:scale-105 transition-transform duration-1000 ease-out" />
               <div className="absolute inset-0 bg-linear-to-r from-transparent to-[#0B1437]/20" />
             </div>
             <FadeIn className="flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 order-2">
