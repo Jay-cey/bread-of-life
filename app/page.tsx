@@ -298,59 +298,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════ 
-          6. DAILY CTA  ·  bg: CREAM (light)
-      ═══════════════════════════════════════════════ */}
-      <section className="bg-[#FAF7F0] py-40 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-20 items-end">
-            <FadeIn>
-              <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-[#C9A84C] mb-6 block">Daily</span>
-              <h2 className="font-serif text-[clamp(2.5rem,5vw,5rem)] text-[#0B1437] leading-[0.9]">
-                60 Seconds<br/>With Jesus.<br/>Every morning.
-              </h2>
-            </FadeIn>
-            <FadeIn delay={0.15} className="flex flex-col gap-6">
-              <p className="font-sans text-lg text-[#0B1437]/60 leading-relaxed">
-                A single verse. A short reflection. A written prayer. Under a minute — but it can reorder your entire day.
-              </p>
-              <Link
-                href="/daily"
-                className="self-start inline-flex items-center gap-3 px-8 py-4 bg-[#0B1437] text-white font-sans font-bold text-xs uppercase tracking-widest hover:bg-[#C9A84C] hover:text-[#0B1437] transition-all duration-300"
-              >
-                Read Today's Devotional
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-              </Link>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════ 
-          7. PRAYER CAPSTONE  ·  bg: NAVY (dark)
-      ═══════════════════════════════════════════════ */}
-      <section className="bg-[#0B1437] py-40 px-8 md:px-16 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/community2.jpg')] bg-cover bg-top opacity-10" />
-        <div className="relative z-10 max-w-2xl mx-auto">
-          <FadeIn>
-            <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-[#C9A84C] mb-8 block">Not Alone</span>
-            <h2 className="font-serif text-[clamp(2.2rem,5vw,4.2rem)] text-white mb-6 leading-tight">
-              You don't have to<br/>carry it alone.
-            </h2>
-            <p className="font-sans text-base text-white/50 leading-relaxed mb-14 max-w-lg mx-auto">
-              Leave your burdens on the prayer wall. Let this community stand with you in faith.
-            </p>
-            <Link
-              href="/prayer"
-              className="inline-flex items-center gap-3 font-sans text-sm uppercase tracking-widest text-[#C9A84C] pb-1 border-b border-[#C9A84C]/40 hover:border-[#C9A84C] hover:gap-6 transition-all duration-300"
-            >
-              Enter the Prayer Space
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-            </Link>
-          </FadeIn>
-        </div>
-      </section>
-
     </div>
   );
 }
