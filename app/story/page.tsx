@@ -10,7 +10,7 @@ const chaptersData = [
     id: 1,
     title: "In the beginning...",
     name: "Creation",
-    bgUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+    bgUrl: "/images/story_chapter_1_1775916955792.png",
     paragraphs: [
       "God created the heavens and the earth. He spoke, and galaxies spun into existence. He formed the mountains, the oceans, and the forests. The masterpiece of His creation, however, was humanity. He carefully shaped us in His own image.",
       "We were made not just to exist, but to walk with Him in the perfection of Eden. Everything was whole. Everything was peace. Love was the rhythm of life."
@@ -25,7 +25,7 @@ const chaptersData = [
     id: 2,
     title: "But humanity chose their own way...",
     name: "The Fall",
-    bgUrl: "https://images.unsplash.com/photo-1505527376092-2cc7b05553e1?q=80&w=2070&auto=format&fit=crop",
+    bgUrl: "/images/story_chapter_2_1775916977570.png",
     paragraphs: [
       "Despite the perfection of Eden, a choice remained. Love is not true love if it is forced. Humanity was given the freedom to choose, and we chose to rebel. The lie was whispered that we could be our own gods.",
       "In reaching for that forbidden autonomy, our ancestors severed the cord of life. The perfect union with the Creator was broken, plunging the world into darkness."
@@ -40,7 +40,7 @@ const chaptersData = [
     id: 3,
     title: "Sin separated us from God...",
     name: "Brokenness",
-    bgUrl: "https://images.unsplash.com/photo-1478147427282-58a87a120781?q=80&w=2070&auto=format&fit=crop",
+    bgUrl: "/images/story_chapter_3_1775916992475.png",
     paragraphs: [
       "The consequences were immediate and enduring. The harmony was shattered. Pain, shame, and death entered the human experience. We found ourselves wandering through history, unable to fix the deepest ache of our hearts.",
       "A chasm was formed that no amount of good deeds, philosophy, or human effort could bridge. The debt of rebellion was death, and we were spiritually bankrupt."
@@ -55,7 +55,7 @@ const chaptersData = [
     id: 4,
     title: "God did not abandon us...",
     name: "The Cross",
-    bgUrl: "https://images.unsplash.com/photo-1544070085-f5596b6b7183?q=80&w=1974&auto=format&fit=crop",
+    bgUrl: "/images/story_chapter_4_1775917007451.png",
     paragraphs: [
       "In the greatest act of love history has ever known, God stepped across the chasm. The Creator became the created. Jesus Christ left the perfection of heaven to enter our brokenness.",
       "He lived the perfect life we could not live, and died the tortuous death that we deserved. On the cross, He carried the immense weight of our sin, paying our debt in full."
@@ -70,7 +70,7 @@ const chaptersData = [
     id: 5,
     title: "Death could not hold Him...",
     name: "Resurrection",
-    bgUrl: "https://images.unsplash.com/photo-1506085695505-1811ee85fbee?q=80&w=2014&auto=format&fit=crop",
+    bgUrl: "/images/story_chapter_5_1775917023853.png",
     paragraphs: [
       "The story did not end in a tomb. Three days later, Jesus rose from the dead, entirely defeating the power of sin and death. This was not a metaphor—it was a literal, historical triumph.",
       "His resurrection means that the debt is fully cleared. It means that physical death is no longer a permanent end, but a doorway. He conquered the grave to offer us new life."
@@ -85,7 +85,7 @@ const chaptersData = [
     id: 6,
     title: "The invitation is still open...",
     name: "Salvation Today",
-    bgUrl: "https://images.unsplash.com/photo-1490283086708-348e89547ea7?q=80&w=1953&auto=format&fit=crop",
+    bgUrl: "/images/story_chapter_6_1775917041433.png",
     paragraphs: [
       "This entire grand narrative hinges on a personal invitation. Jesus offers forgiveness and restored relationship as a free gift, but like any gift, it must be willingly received.",
       "You don't need to be perfect to receive it. All that is required is faith—to trust in what He has done on the cross, to turn away from a life lived independently of Him, and to surrender your life into His saving hands."

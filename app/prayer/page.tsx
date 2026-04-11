@@ -85,7 +85,7 @@ export default function PrayerCorner() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--background)] pt-16 pb-32 px-6">
+    <div className="min-h-screen bg-[var(--background)] pt-24 pb-32 px-6">
       <div className="max-w-4xl mx-auto flex flex-col items-center">
         
         <motion.div 

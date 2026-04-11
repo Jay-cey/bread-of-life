@@ -17,7 +17,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className="min-h-screen bg-[var(--background)] pt-16 pb-32 px-6">
+    <div className="min-h-screen bg-[var(--background)] pt-24 pb-32 px-6">
       <div className="max-w-3xl mx-auto">
         <Link 
           href="/journal"

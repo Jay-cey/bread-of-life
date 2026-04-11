@@ -66,6 +66,7 @@ export default function RootLayout({
         <main className="flex-grow">
           {children}
         </main>
+        {/* Spacer for fixed navbar on inner pages is handled per-page via pt-20 */}
         <Footer />
         <BackgroundAudio />
       </body>
