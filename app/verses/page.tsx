@@ -25,9 +25,9 @@ export default function VersesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--background)] pt-40 pb-32 px-6">
+    <div className="min-h-screen bg-[var(--background)] pt-45 md:pt-40 pb-32 px-6">
       <div className="max-w-4xl mx-auto">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ export default function VersesPage() {
         </motion.div>
 
         {!selectedEmotion ? (
-          <motion.div 
+          <motion.div
             className="grid grid-cols-2 md:grid-cols-4 gap-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -61,7 +61,7 @@ export default function VersesPage() {
             ))}
           </motion.div>
         ) : (
-          <motion.div 
+          <motion.div
             className="max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ export default function VersesPage() {
               <h2 className="font-serif text-3xl text-[var(--primary)] capitalize">
                 {selectedEmotion}
               </h2>
-              <button 
+              <button
                 onClick={() => setSelectedEmotion(null)}
                 className="text-[var(--accent-secondary)] text-sm font-sans uppercase tracking-widest hover:underline"
               >
@@ -87,7 +87,7 @@ export default function VersesPage() {
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
               >
-                <ScriptureBlock 
+                <ScriptureBlock
                   verse={versesData[selectedEmotion][verseIndex].verse}
                   reference={versesData[selectedEmotion][verseIndex].reference}
                   commentary={versesData[selectedEmotion][verseIndex].commentary}
@@ -96,14 +96,14 @@ export default function VersesPage() {
             </AnimatePresence>
 
             <div className="mt-12 flex flex-col sm:flex-row justify-between items-center gap-4">
-              <button 
+              <button
                 onClick={handleNextVerse}
                 className="px-6 py-3 border border-[var(--accent)] text-[var(--primary)] rounded text-sm uppercase tracking-widest font-sans hover:bg-[var(--accent)] hover:text-[var(--background)] transition-colors w-full sm:w-auto"
               >
                 Find Another Verse
               </button>
-              
-              <Link 
+
+              <Link
                 href="/verses/share"
                 className="px-6 py-3 bg-[var(--accent)] text-[var(--background)] rounded text-sm uppercase tracking-widest font-sans hover:bg-[var(--accent-secondary)] transition-colors w-full sm:w-auto text-center"
               >

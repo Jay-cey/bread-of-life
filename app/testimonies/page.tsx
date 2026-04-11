@@ -32,12 +32,12 @@ export default function TestimoniesPage() {
         .select('*')
         .eq('approved', true)
         .order('created_at', { ascending: false });
-        
+
       if (data && !error) {
         setTestimonies(data as Testimony[]);
       }
     };
-    
+
     fetchTestimonies();
   }, []);
 
@@ -78,12 +78,12 @@ export default function TestimoniesPage() {
   }, [isDrawerOpen]);
 
   return (
-    <div className="min-h-screen bg-[var(--background)] pt-40 pb-32 px-6">
+    <div className="min-h-screen bg-[var(--background)] pt-45 md:pt-40 pb-32 px-6">
       <div className="max-w-6xl mx-auto">
-        
+
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-20 gap-8">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -92,7 +92,7 @@ export default function TestimoniesPage() {
               Testimonies
             </h1>
             <p className="font-sans text-[var(--foreground)] opacity-70 text-lg max-w-xl">
-              These are real stories of encounter with God. 
+              These are real stories of encounter with God.
               The power of a testimony is that it proves what God does for one, He can do for another.
             </p>
           </motion.div>
@@ -114,7 +114,7 @@ export default function TestimoniesPage() {
         {/* Testimonies Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {testimonies.map((t, idx) => (
-            <motion.div 
+            <motion.div
               key={t.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -162,7 +162,7 @@ export default function TestimoniesPage() {
               onClick={() => setIsDrawerOpen(false)}
               className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm z-50"
             />
-            
+
             {/* Drawer */}
             <motion.div
               initial={{ x: "100%" }}
@@ -172,7 +172,7 @@ export default function TestimoniesPage() {
               className="fixed top-0 right-0 bottom-0 w-full max-w-xl bg-[var(--background)] shadow-2xl z-50 overflow-y-auto border-l border-[var(--primary)] border-opacity-10"
             >
               <div className="p-8 md:p-12 relative min-h-full flex flex-col">
-                <button 
+                <button
                   onClick={() => setIsDrawerOpen(false)}
                   className="absolute top-8 right-8 text-[var(--primary)] opacity-50 hover:opacity-100 transition-opacity"
                 >
@@ -201,9 +201,9 @@ export default function TestimoniesPage() {
                       <p className="font-sans text-sm text-[var(--primary)] opacity-70">Your story matters. It is currently pending moderation and will appear soon.</p>
                     </motion.div>
                   ) : (
-                    <motion.form 
+                    <motion.form
                       key="form"
-                      onSubmit={handleSubmit} 
+                      onSubmit={handleSubmit}
                       className="flex flex-col gap-8 flex-1"
                       exit={{ opacity: 0 }}
                     >

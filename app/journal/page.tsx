@@ -10,7 +10,7 @@ const categories = ["All", "Faith", "Grace", "Redemption", "Eternal Life"];
 export default function JournalPage() {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const filteredArticles = journalData.filter(article => 
+  const filteredArticles = journalData.filter(article =>
     activeCategory === "All" ? true : article.category === activeCategory
   );
 
@@ -18,9 +18,9 @@ export default function JournalPage() {
   const gridArticles = filteredArticles.slice(1);
 
   return (
-    <div className="min-h-screen bg-[var(--background)] pt-40 pb-32 px-6">
+    <div className="min-h-screen bg-[var(--background)] pt-45 md:pt-40 pb-32 px-6">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Header & Filter */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div>
@@ -33,11 +33,10 @@ export default function JournalPage() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 text-xs uppercase tracking-widest font-sans rounded-full transition-colors border ${
-                  activeCategory === cat 
-                    ? "bg-[var(--primary)] text-[var(--background)] border-[var(--primary)]" 
-                    : "bg-transparent text-[var(--primary)] border-[var(--primary)] border-opacity-20 hover:border-opacity-100"
-                }`}
+                className={`px-4 py-2 text-xs uppercase tracking-widest font-sans rounded-full transition-colors border ${activeCategory === cat
+                  ? "bg-[var(--primary)] text-[var(--background)] border-[var(--primary)]"
+                  : "bg-transparent text-[var(--primary)] border-[var(--primary)] border-opacity-20 hover:border-opacity-100"
+                  }`}
               >
                 {cat}
               </button>
@@ -75,7 +74,7 @@ export default function JournalPage() {
                         {featured.excerpt}
                       </p>
                       <span className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-widest text-[var(--primary)] font-bold group-hover:text-[var(--accent)] transition-colors">
-                        Read Article 
+                        Read Article
                         <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
@@ -94,7 +93,7 @@ export default function JournalPage() {
             {gridArticles.length > 0 && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {gridArticles.map((article, idx) => (
-                  <motion.div 
+                  <motion.div
                     key={article.slug}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -113,7 +112,7 @@ export default function JournalPage() {
                           {article.excerpt}
                         </p>
                         <span className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-widest text-[var(--primary)] font-bold opacity-50 group-hover:opacity-100 group-hover:text-[var(--accent)] transition-all">
-                          Read 
+                          Read
                           <svg className="w-3 h-3 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                           </svg>

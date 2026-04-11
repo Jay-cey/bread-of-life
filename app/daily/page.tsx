@@ -7,7 +7,7 @@ import dailyData from "@/lib/daily.json";
 export default function DailyPage() {
   const [dailyEntry, setDailyEntry] = useState<typeof dailyData[0] | null>(null);
   const [showToast, setShowToast] = useState(false);
-  
+
   // Subscribe states
   const [email, setEmail] = useState("");
   const [subStatus, setSubStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -18,7 +18,7 @@ export default function DailyPage() {
     const dateStr = new Date().toDateString();
     let hash = 0;
     for (let i = 0; i < dateStr.length; i++) {
-        hash = dateStr.charCodeAt(i) + ((hash << 5) - hash);
+      hash = dateStr.charCodeAt(i) + ((hash << 5) - hash);
     }
     const index = Math.abs(hash) % dailyData.length;
     setDailyEntry(dailyData[index]);
@@ -36,7 +36,7 @@ export default function DailyPage() {
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-    
+
     setSubStatus("loading");
     try {
       const res = await fetch("/api/subscribe", {
@@ -45,7 +45,7 @@ export default function DailyPage() {
         body: JSON.stringify({ email }),
       });
       const data = await res.json();
-      
+
       if (res.ok) {
         setSubStatus("success");
         setSubMessage(data.message || "Subscribed successfully.");
@@ -63,8 +63,8 @@ export default function DailyPage() {
   if (!dailyEntry) return <div className="min-h-screen bg-[var(--background)]"></div>;
 
   return (
-    <div className="min-h-screen bg-[var(--background)] pt-40 pb-32 px-6 flex flex-col items-center justify-center relative">
-      <motion.div 
+    <div className="min-h-screen bg-[var(--background)] pt-45 md:pt-40 pb-32 px-6 flex flex-col items-center justify-center relative">
+      <motion.div
         className="max-w-2xl w-full"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -80,7 +80,7 @@ export default function DailyPage() {
         </div>
 
         <div className="bg-[var(--secondary)] p-8 md:p-12 rounded border border-[var(--primary)] border-opacity-10 shadow-sm relative mb-12">
-          
+
           <div className="mb-10">
             <h2 className="font-sans text-xs uppercase tracking-widest text-[var(--accent-secondary)] mb-4 font-bold border-b border-[var(--primary)] border-opacity-10 pb-2 inline-block">
               Daily Verse
@@ -111,7 +111,7 @@ export default function DailyPage() {
             </p>
           </div>
 
-          <button 
+          <button
             onClick={handleCopy}
             className="w-full py-4 flex justify-center items-center gap-2 bg-[var(--accent)] text-[var(--background)] rounded font-sans uppercase tracking-widest text-sm hover:bg-[var(--accent-secondary)] hover:text-white transition-all shadow"
           >
@@ -129,16 +129,16 @@ export default function DailyPage() {
             Subscribe to receive '60 Seconds With Jesus' delivered fresh every morning.
           </p>
           <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
-            <input 
-              type="email" 
+            <input
+              type="email"
               required
-              placeholder="Your email address" 
+              placeholder="Your email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="flex-1 bg-[var(--secondary)] text-[var(--primary)] font-sans text-sm p-3 rounded border border-transparent focus:outline-none focus:border-[var(--accent)] transition-colors text-center sm:text-left"
             />
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               disabled={subStatus === "loading"}
               className="bg-[var(--primary)] text-[var(--background)] px-6 py-3 rounded font-sans uppercase tracking-widest text-xs hover:bg-[var(--accent)] transition-colors disabled:opacity-50"
             >

@@ -28,12 +28,12 @@ export default function PrayerCorner() {
         .eq('approved', true)
         .order('created_at', { ascending: false })
         .limit(20);
-        
+
       if (data && !error) {
         setRecentPrayers(data as PrayerSubmission[]);
       }
     };
-    
+
     fetchPrayers();
 
     // 2. Subscribe to Postgres Changes to update list in realtime when a prayer is approved
@@ -85,10 +85,10 @@ export default function PrayerCorner() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--background)] pt-40 pb-32 px-6">
+    <div className="min-h-screen bg-[var(--background)] pt-45 md:pt-40 pb-32 px-6">
       <div className="max-w-4xl mx-auto flex flex-col items-center">
-        
-        <motion.div 
+
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -101,12 +101,12 @@ export default function PrayerCorner() {
             Prayer Corner
           </h1>
           <p className="font-sans text-[var(--foreground)] opacity-70 text-lg max-w-xl mx-auto">
-            You do not have to carry your burdens alone. Leave a request below, 
+            You do not have to carry your burdens alone. Leave a request below,
             knowing that God hears you exactly where you are. Your request will be securely processed and added to the wall upon review.
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="w-full max-w-2xl bg-[var(--secondary)] bg-opacity-50 p-8 md:p-12 rounded-lg mb-20 relative"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -114,7 +114,7 @@ export default function PrayerCorner() {
         >
           <AnimatePresence>
             {showSuccess && (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
@@ -145,7 +145,7 @@ export default function PrayerCorner() {
                 className="w-full bg-transparent border-b border-[var(--primary)] border-opacity-20 py-3 text-[var(--primary)] font-sans focus:outline-none focus:border-opacity-100 transition-colors placeholder:opacity-30"
               />
             </div>
-            
+
             <div>
               <label htmlFor="prayer" className="block font-sans text-xs uppercase tracking-widest text-[var(--primary)] font-bold mb-2 opacity-60">
                 Your Prayer Request *

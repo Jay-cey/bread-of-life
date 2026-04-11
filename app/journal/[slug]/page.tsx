@@ -17,9 +17,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className="min-h-screen bg-[var(--background)] pt-40 pb-32 px-6">
+    <div className="min-h-screen bg-[var(--background)] pt-45 md:pt-40 pb-32 px-6">
       <div className="max-w-3xl mx-auto">
-        <Link 
+        <Link
           href="/journal"
           className="inline-flex items-center gap-2 text-[var(--primary)] opacity-50 hover:opacity-100 hover:text-[var(--accent)] font-sans text-xs uppercase tracking-widest font-bold transition-all mb-16"
         >
@@ -28,7 +28,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           </svg>
           Back to Journal
         </Link>
-        
+
         <header className="mb-16 border-b border-[var(--primary)] border-opacity-10 pb-12">
           <div className="flex items-center gap-4 mb-6">
             <span className="bg-[var(--accent)] text-[var(--background)] px-3 py-1 text-[10px] uppercase tracking-widest rounded-full font-bold">
@@ -38,11 +38,11 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               {article.readTime}
             </span>
           </div>
-          
+
           <h1 className="font-serif text-5xl md:text-6xl text-[var(--primary)] mb-6 leading-tight">
             {article.title}
           </h1>
-          
+
           <p className="font-serif italic text-2xl text-[var(--primary)] opacity-80 leading-relaxed">
             {article.subtitle}
           </p>
@@ -60,7 +60,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             if (block.type === "scripture") {
               return (
                 <div key={idx} className="my-12">
-                  <ScriptureBlock 
+                  <ScriptureBlock
                     verse={block.verse || ""}
                     reference={block.reference || ""}
                     commentary={block.commentary}

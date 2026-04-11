@@ -8,11 +8,11 @@ export default function WhoIsJesusPage() {
   const [hasPrayed, setHasPrayed] = useState(false);
 
   return (
-    <div className="bg-background min-h-screen pt-40 pb-32">
+    <div className="bg-background min-h-screen pt-45 md:pt-40 pb-32">
       <div className="max-w-3xl mx-auto px-6">
-        
+
         {/* Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -30,7 +30,7 @@ export default function WhoIsJesusPage() {
         </motion.div>
 
         {/* Section 1: The Problem */}
-        <motion.section 
+        <motion.section
           className="mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,14 +47,14 @@ export default function WhoIsJesusPage() {
               Our brokenness left us unable to fix the rift on our own. No amount of human effort or moral living could bridge the gap.
             </p>
           </div>
-          <ScriptureBlock 
+          <ScriptureBlock
             verse="But your iniquities have separated you from your God; your sins have hidden his face from you, so that he will not hear."
-            reference="Isaiah 59:2" 
+            reference="Isaiah 59:2"
           />
         </motion.section>
 
         {/* Section 2: God's Love */}
-        <motion.section 
+        <motion.section
           className="mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,14 +68,14 @@ export default function WhoIsJesusPage() {
               Yet, God did not leave us to our fate. His love for us is reckless, profound, and pursuing. He devised a rescue plan that would satisfy His perfect justice while demonstrating His infinite mercy.
             </p>
           </div>
-          <ScriptureBlock 
+          <ScriptureBlock
             verse="For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."
-            reference="John 3:16" 
+            reference="John 3:16"
           />
         </motion.section>
 
         {/* Section 3: Christ's Sacrifice */}
-        <motion.section 
+        <motion.section
           className="mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -92,14 +92,14 @@ export default function WhoIsJesusPage() {
               Three days later, He rose from the dead, proving His power over sin and death, and opening the door to eternal life for all who would trust Him.
             </p>
           </div>
-          <ScriptureBlock 
+          <ScriptureBlock
             verse="He himself bore our sins in his body on the cross, so that we might die to sins and live for righteousness; by his wounds you have been healed."
-            reference="1 Peter 2:24" 
+            reference="1 Peter 2:24"
           />
         </motion.section>
 
         {/* Section 4: The Invitation */}
-        <motion.section 
+        <motion.section
           className="mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -113,14 +113,14 @@ export default function WhoIsJesusPage() {
               Knowing about Jesus isn't enough. He invites you to respond. This requires repentance—turning away from leading your own life—and placing your complete trust and faith in Him as your Savior and Lord.
             </p>
           </div>
-          <ScriptureBlock 
+          <ScriptureBlock
             verse="Here I am! I stand at the door and knock. If anyone hears my voice and opens the door, I will come in and eat with that person, and they with me."
-            reference="Revelation 3:20" 
+            reference="Revelation 3:20"
           />
         </motion.section>
 
         {/* Section 5: A Prayer */}
-        <motion.section 
+        <motion.section
           className="bg-secondary p-8 md:p-12 rounded border border-accent border-opacity-30 relative overflow-hidden"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -165,7 +165,7 @@ export default function WhoIsJesusPage() {
                     </div>
                     <h3 className="font-serif text-2xl text-primary mb-2">Welcome to the family.</h3>
                     <p className="font-sans text-foreground opacity-80">
-                      Heaven is rejoicing. Your new journey with Christ has just begun. 
+                      Heaven is rejoicing. Your new journey with Christ has just begun.
                       Reach out to a local church to begin walking out your faith.
                     </p>
                   </motion.div>
