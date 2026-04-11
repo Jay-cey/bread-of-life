@@ -114,134 +114,134 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════ 
-          3. CARD GRID  ·  bg: NAVY (dark)
+          3. EDITORIAL STRIPS  ·  alternating cream / navy
       ═══════════════════════════════════════════════ */}
-      <section className="bg-[#0B1437] py-20 px-8 md:px-16">
-        <FadeIn className="max-w-[1500px] mx-auto mb-12 flex items-center gap-6">
-          <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-white/30">Explore</span>
-          <div className="flex-1 h-px bg-white/10" />
-        </FadeIn>
+      <section>
 
-        <div className="max-w-[1500px] mx-auto flex flex-col gap-4">
+        {/* Index label */}
+        <div className="bg-[#FAF7F0] px-8 md:px-16 pt-24 pb-10">
+          <FadeIn className="max-w-7xl mx-auto flex items-end justify-between border-b border-[#0B1437]/10 pb-6">
+            <h2 className="font-sans text-[10px] uppercase tracking-[0.5em] text-[#0B1437]/30">What's Inside</h2>
+            <span className="font-sans text-[10px] text-[#0B1437]/20 uppercase tracking-widest hidden md:block">Bread of Life</span>
+          </FadeIn>
+        </div>
 
-          {/* Row 1: Story (dominant) + Daily + Prayer */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
-
-            {/* STORY — big card with compelling cross/light image */}
-            <FadeIn className="lg:col-span-3">
-              <Link href="/story" className="group block">
-                <div className="relative h-[540px] lg:h-[660px] overflow-hidden">
-                  {/* Dramatic light-ray cross image */}
-                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-1000" />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/30 to-transparent" />
-                  <div className="absolute inset-0 bg-linear-to-r from-black/40 to-transparent" />
-                  <div className="absolute inset-0 p-10 flex flex-col justify-between">
-                    <span className="font-sans text-[10px] uppercase tracking-widest text-[#C9A84C]">The Narrative</span>
-                    <div>
-                      <h3 className="font-serif text-5xl md:text-6xl text-white mb-4 leading-[0.95]">The<br/>Gospel Story</h3>
-                      <p className="font-sans text-sm text-white/50 mb-6 max-w-xs leading-relaxed">Six chapters. Creation, the Fall, Brokenness, the Cross, Resurrection, and Salvation.</p>
-                      <span className="inline-flex items-center gap-2 text-xs font-sans uppercase tracking-widest text-[#C9A84C] group-hover:gap-5 transition-all duration-300">
-                        Begin the Journey
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
+        {/* I — The Gospel Story | CREAM, image right */}
+        <Link href="/story" className="group block">
+          <div className="bg-[#FAF7F0] grid grid-cols-1 md:grid-cols-2 border-t border-[#0B1437]/10 group-hover:border-[#C9A84C]/50 transition-colors duration-500 min-h-[460px]">
+            <FadeIn className="flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 order-2 md:order-1">
+              <span className="font-sans text-[10px] uppercase tracking-[0.5em] text-[#C9A84C] mb-8 block">I</span>
+              <h3 className="font-serif text-[clamp(2.8rem,4.5vw,5rem)] text-[#0B1437] leading-[0.92] mb-8 group-hover:text-[#6B2737] transition-colors duration-300">
+                The<br/>Gospel Story
+              </h3>
+              <p className="font-sans text-base text-[#0B1437]/55 leading-relaxed mb-10 max-w-sm">
+                Six chapters. Creation, the Fall, Brokenness, the Cross, Resurrection, and an open invitation.
+              </p>
+              <span className="inline-flex items-center gap-3 font-sans text-xs uppercase tracking-widest text-[#0B1437]/60 font-bold group-hover:text-[#C9A84C] group-hover:gap-7 transition-all duration-300">
+                Begin Reading
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </span>
             </FadeIn>
-
-            {/* Right column stack */}
-            <div className="lg:col-span-2 grid grid-rows-2 gap-4">
-              {/* DAILY — gold */}
-              <FadeIn delay={0.1}>
-                <Link href="/daily" className="group block h-full">
-                  <div className="relative h-full min-h-[250px] overflow-hidden bg-[#C9A84C]">
-                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-15 group-hover:opacity-25 group-hover:scale-105 transition-all duration-700" />
-                    <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                      <span className="font-sans text-[10px] uppercase tracking-widest text-[#0B1437]/50">Daily</span>
-                      <div>
-                        <h3 className="font-serif text-4xl text-[#0B1437] mb-2 leading-tight">60 Seconds<br/>With Jesus</h3>
-                        <span className="font-sans text-xs text-[#0B1437]/60 uppercase tracking-widest">Today's Reflection →</span>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </FadeIn>
-
-              {/* PRAYER — cream on navy */}
-              <FadeIn delay={0.2}>
-                <Link href="/prayer" className="group block h-full">
-                  <div className="relative h-full min-h-[250px] overflow-hidden bg-[#FAF7F0]">
-                    <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                      <span className="font-sans text-[10px] uppercase tracking-widest text-[#0B1437]/30">A Safe Space</span>
-                      <div>
-                        <h3 className="font-serif text-4xl text-[#0B1437] mb-3 leading-tight">Prayer<br/>Corner</h3>
-                        <p className="font-sans text-sm text-[#0B1437]/50 mb-4 leading-relaxed max-w-xs">Leave your burdens here. You do not have to carry them alone.</p>
-                        <span className="font-sans text-xs uppercase tracking-widest text-[#C9A84C]">Leave a Request →</span>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </FadeIn>
+            <div className="relative h-[320px] md:h-auto order-1 md:order-2 overflow-hidden">
+              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-1000 ease-out" />
             </div>
           </div>
+        </Link>
 
-          {/* Row 2: Verses + Journal + Who Is Jesus */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-
-            {/* VERSES */}
-            <FadeIn>
-              <Link href="/verses" className="group block">
-                <div className="relative h-[380px] overflow-hidden">
-                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1528&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-linear-to-t from-[#0B1437] via-[#0B1437]/20 to-transparent" />
-                  <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                    <span className="font-sans text-[10px] uppercase tracking-widest text-[#C9A84C]">Living Word</span>
-                    <div>
-                      <h3 className="font-serif text-4xl text-white mb-3 leading-tight">Verse Discovery</h3>
-                      <p className="font-sans text-xs text-white/50 leading-relaxed">Find scripture for exactly where you are.</p>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </FadeIn>
-
-            {/* JOURNAL */}
-            <FadeIn delay={0.1}>
-              <Link href="/journal" className="group block">
-                <div className="relative h-[380px] overflow-hidden bg-[#FAF7F0]">
-                  <div className="absolute top-0 left-0 right-0 h-[55%] bg-[url('https://images.unsplash.com/photo-1455390582262-044cdead2708?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-linear-to-t from-[#FAF7F0] via-[#FAF7F0]/50 to-transparent" />
-                  <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                    <span className="font-sans text-[10px] uppercase tracking-widest text-[#C9A84C]">Editorial</span>
-                    <div>
-                      <h3 className="font-serif text-4xl text-[#0B1437] mb-3 leading-tight">Faith Journal</h3>
-                      <span className="font-sans text-xs uppercase tracking-widest text-[#C9A84C] group-hover:gap-3 transition-all">Enter Library →</span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </FadeIn>
-
-            {/* WHO IS JESUS */}
-            <FadeIn delay={0.2}>
-              <Link href="/who-is-jesus" className="group block">
-                <div className="relative h-[380px] overflow-hidden bg-[#6B2737]">
-                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1505855265981-d52719d1f64e?q=80&w=1459&auto=format&fit=crop')] bg-cover bg-center opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
-                  <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                    <span className="font-sans text-[10px] uppercase tracking-widest text-[#C9A84C]">The Person</span>
-                    <div>
-                      <h3 className="font-serif text-4xl text-white mb-3 leading-tight">Who is Jesus?</h3>
-                      <p className="font-sans text-xs text-white/50 leading-relaxed">An honest answer to the most important question ever asked.</p>
-                    </div>
-                  </div>
-                </div>
-              </Link>
+        {/* II — Verse Discovery | NAVY, image left */}
+        <Link href="/verses" className="group block">
+          <div className="bg-[#0B1437] grid grid-cols-1 md:grid-cols-2 border-t border-white/[0.06] group-hover:border-[#C9A84C]/30 transition-colors duration-500 min-h-[460px]">
+            <div className="relative h-[320px] md:h-auto overflow-hidden order-1">
+              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1528&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-1000 ease-out" />
+              <div className="absolute inset-0 bg-linear-to-r from-transparent to-[#0B1437]/20" />
+            </div>
+            <FadeIn className="flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 order-2">
+              <span className="font-sans text-[10px] uppercase tracking-[0.5em] text-[#C9A84C] mb-8 block">II</span>
+              <h3 className="font-serif text-[clamp(2.8rem,4.5vw,5rem)] text-white leading-[0.92] mb-8">
+                Verse<br/>Discovery
+              </h3>
+              <p className="font-sans text-base text-white/45 leading-relaxed mb-10 max-w-sm">
+                Choose your emotional state and be instantly met with living scripture that speaks precisely to where you are.
+              </p>
+              <span className="inline-flex items-center gap-3 font-sans text-xs uppercase tracking-widest text-white/40 font-bold group-hover:text-[#C9A84C] group-hover:gap-7 transition-all duration-300">
+                Find a Verse
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </span>
             </FadeIn>
           </div>
+        </Link>
+
+        {/* III — Faith Journal | CREAM, image right */}
+        <Link href="/journal" className="group block">
+          <div className="bg-[#FAF7F0] grid grid-cols-1 md:grid-cols-2 border-t border-[#0B1437]/10 group-hover:border-[#C9A84C]/50 transition-colors duration-500 min-h-[460px]">
+            <FadeIn className="flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 order-2 md:order-1">
+              <span className="font-sans text-[10px] uppercase tracking-[0.5em] text-[#C9A84C] mb-8 block">III</span>
+              <h3 className="font-serif text-[clamp(2.8rem,4.5vw,5rem)] text-[#0B1437] leading-[0.92] mb-8 group-hover:text-[#6B2737] transition-colors duration-300">
+                Faith<br/>Journal
+              </h3>
+              <p className="font-sans text-base text-[#0B1437]/55 leading-relaxed mb-10 max-w-sm">
+                Editorial reflections on theology, grace, and what it means to live a life of faith in the modern world. Quiet. Thoughtful. Well-crafted.
+              </p>
+              <span className="inline-flex items-center gap-3 font-sans text-xs uppercase tracking-widest text-[#0B1437]/60 font-bold group-hover:text-[#C9A84C] group-hover:gap-7 transition-all duration-300">
+                Enter the Library
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </span>
+            </FadeIn>
+            <div className="relative h-[320px] md:h-auto order-1 md:order-2 overflow-hidden">
+              <div className="absolute inset-0 bg-[url('images/journal2.jpg')] bg-cover bg-center group-hover:scale-105 transition-transform duration-1000 ease-out" />
+            </div>
+          </div>
+        </Link>
+
+        {/* IV — Who is Jesus | NAVY, image left */}
+        <Link href="/who-is-jesus" className="group block">
+          <div className="bg-[#0B1437] grid grid-cols-1 md:grid-cols-2 border-t border-white/[0.06] group-hover:border-[#C9A84C]/30 transition-colors duration-500 min-h-[460px]">
+            <div className="relative h-[320px] md:h-auto overflow-hidden order-1">
+              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=1544&auto=format&fit=crop')] bg-cover bg-[center_20%] group-hover:scale-105 transition-transform duration-1000 ease-out" />
+              <div className="absolute inset-0 bg-linear-to-r from-transparent to-[#0B1437]/20" />
+            </div>
+            <FadeIn className="flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 order-2">
+              <span className="font-sans text-[10px] uppercase tracking-[0.5em] text-[#C9A84C] mb-8 block">IV</span>
+              <h3 className="font-serif text-[clamp(2.8rem,4.5vw,5rem)] text-white leading-[0.92] mb-8">
+                Who is<br/>Jesus?
+              </h3>
+              <p className="font-sans text-base text-white/45 leading-relaxed mb-10 max-w-sm">
+                A gentle, honest, and scripturally-grounded answer to the most important question ever asked of humanity.
+              </p>
+              <span className="inline-flex items-center gap-3 font-sans text-xs uppercase tracking-widest text-white/40 font-bold group-hover:text-[#C9A84C] group-hover:gap-7 transition-all duration-300">
+                Discover Him
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </span>
+            </FadeIn>
+          </div>
+        </Link>
+
+        {/* V + VI — Daily & Prayer side-by-side | CREAM, no images */}
+        <div className="bg-[#FAF7F0] border-t border-[#0B1437]/10 grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-[#0B1437]/10">
+          <Link href="/daily" className="group block">
+            <div className="px-8 md:px-16 lg:px-20 py-16 min-h-[280px] flex flex-col justify-center">
+              <FadeIn>
+                <span className="font-sans text-[10px] uppercase tracking-[0.5em] text-[#C9A84C] mb-6 block">V · Daily</span>
+                <h3 className="font-serif text-[clamp(2rem,3vw,3rem)] text-[#0B1437] leading-tight mb-5 group-hover:text-[#6B2737] transition-colors duration-300">60 Seconds With Jesus</h3>
+                <p className="font-sans text-sm text-[#0B1437]/50 mb-6 max-w-xs leading-relaxed">A verse, a reflection, a prayer. Under a minute, every morning.</p>
+                <span className="font-sans text-xs uppercase tracking-widest text-[#C9A84C]">Today's Word →</span>
+              </FadeIn>
+            </div>
+          </Link>
+          <Link href="/prayer" className="group block">
+            <div className="px-8 md:px-16 lg:px-20 py-16 min-h-[280px] flex flex-col justify-center">
+              <FadeIn delay={0.1}>
+                <span className="font-sans text-[10px] uppercase tracking-[0.5em] text-[#C9A84C] mb-6 block">VI · Prayer</span>
+                <h3 className="font-serif text-[clamp(2rem,3vw,3rem)] text-[#0B1437] leading-tight mb-5 group-hover:text-[#6B2737] transition-colors duration-300">Prayer Corner</h3>
+                <p className="font-sans text-sm text-[#0B1437]/50 mb-6 max-w-xs leading-relaxed">Leave your burdens here. You do not have to carry them alone.</p>
+                <span className="font-sans text-xs uppercase tracking-widest text-[#C9A84C]">Leave a Request →</span>
+              </FadeIn>
+            </div>
+          </Link>
         </div>
+
       </section>
+
 
       {/* ═══════════════════════════════════════════════ 
           4. VERSE SPOTLIGHT  ·  bg: CREAM (light)
