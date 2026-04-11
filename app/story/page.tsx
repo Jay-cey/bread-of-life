@@ -100,7 +100,9 @@ const chaptersData = [
 
 function ChapterSection({ data, setActiveChapter }: { data: typeof chaptersData[0], setActiveChapter: (id: number) => void }) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { amount: 0.5, margin: "0px 0px -10% 0px" });
+  // Use a lower amount threshold so detection still works on mobile where sections
+  // may not fill a full viewport height.
+  const isInView = useInView(ref, { amount: 0.3, margin: "0px 0px -5% 0px" });
 
   useEffect(() => {
     if (isInView) {
@@ -115,23 +117,42 @@ function ChapterSection({ data, setActiveChapter }: { data: typeof chaptersData[
   }, [isInView, data.id, setActiveChapter]);
 
   return (
-    <section id={`chapter-${data.id}`} className="min-h-screen w-full relative flex flex-col md:flex-row items-stretch" ref={ref}>
-      {/* Background Media Side */}
-      <div 
-        className="w-full md:w-1/2 h-[50vh] md:h-screen sticky top-0 bg-cover bg-center brightness-75 md:brightness-100 dark:brightness-50 transition-all duration-700"
+    /*
+     * Mobile layout: simple stacked column — image on top (relative, fixed height),
+     * content below. Each section is fully self-contained so sections cannot bleed
+     * into each other. The `sticky` trick only works reliably in a side-by-side
+     * flex-row layout (desktop).
+     *
+     * Desktop (md+): classic sticky split-screen — left half sticky image,
+     * right half scrollable content, section fills at least the viewport.
+     */
+    <section
+      id={`chapter-${data.id}`}
+      className="w-full flex flex-col md:flex-row md:min-h-screen md:items-stretch"
+      ref={ref}
+    >
+      {/* Image panel */}
+      <div
+        className={[
+          // Mobile: normal flow, fixed height, no sticky
+          "w-full h-[45vw] min-h-[220px] max-h-[380px]",
+          "bg-cover bg-center brightness-75 dark:brightness-50 transition-all duration-700",
+          // Desktop: half-width, full viewport height, sticky
+          "md:w-1/2 md:h-auto md:max-h-none md:min-h-0 md:sticky md:top-0 md:self-start md:h-screen md:brightness-100",
+        ].join(" ")}
         style={{ backgroundImage: `url('${data.bgUrl}')` }}
       />
-      
-      {/* Scrollable Content Side */}
-      <div className="w-full md:w-1/2 p-6 md:p-16 lg:p-24 flex items-center bg-background">
-        <motion.div 
+
+      {/* Content panel */}
+      <div className="w-full md:w-1/2 px-6 py-10 md:p-16 lg:p-24 flex items-start md:items-center bg-background">
+        <motion.div
           className="max-w-xl w-full"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <div className="flex items-center gap-4 mb-6">
+          <div className="flex items-center gap-4 mb-5">
             <span className="font-serif text-5xl md:text-7xl text-accent opacity-30 font-bold tracking-tighter">
               {data.id.toString().padStart(2, '0')}
             </span>
@@ -139,18 +160,18 @@ function ChapterSection({ data, setActiveChapter }: { data: typeof chaptersData[
               {data.name}
             </span>
           </div>
-          
-          <h2 className="font-serif text-4xl md:text-5xl text-primary mb-8 leading-tight">
-            "{data.title}"
+
+          <h2 className="font-serif text-3xl md:text-5xl text-primary mb-6 leading-tight">
+            &ldquo;{data.title}&rdquo;
           </h2>
 
-          <div className="space-y-6 text-lg text-foreground opacity-80 font-sans leading-relaxed">
+          <div className="space-y-5 text-base md:text-lg text-foreground opacity-80 font-sans leading-relaxed">
             {data.paragraphs.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
           </div>
 
-          <ScriptureBlock 
+          <ScriptureBlock
             verse={data.scripture.verse}
             reference={data.scripture.reference}
             commentary={data.scripture.commentary}
@@ -196,8 +217,14 @@ export default function StoryPage() {
     <div className="bg-background relative">
       <ChapterProgress totalChapters={chaptersData.length} activeChapter={activeChapter} />
       
-      {chaptersData.map((chap) => (
-        <ChapterSection key={chap.id} data={chap} setActiveChapter={setActiveChapter} />
+      {chaptersData.map((chap, idx) => (
+        <div key={chap.id}>
+          <ChapterSection data={chap} setActiveChapter={setActiveChapter} />
+          {/* Mobile-only divider — gives a clear visual break between chapters */}
+          {idx < chaptersData.length - 1 && (
+            <div className="md:hidden h-px bg-secondary opacity-60 mx-6" />
+          )}
+        </div>
       ))}
 
       {/* Sticky Bottom Resume Banner */}
