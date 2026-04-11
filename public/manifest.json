@@ -1,0 +1,16 @@
+{
+  "name": "Bread of Life",
+  "short_name": "Bread of Life",
+  "description": "A spiritually immersive journey into the Bread of Life.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF7F0",
+  "theme_color": "#0B1437",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "192x192",
+      "type": "image/x-icon"
+    }
+  ]
+}
