@@ -18,7 +18,7 @@ export default function JournalPage() {
   const gridArticles = filteredArticles.slice(1);
 
   return (
-    <div className="min-h-screen bg-[var(--background)] pt-45 md:pt-40 pb-32 px-6">
+    <div className="min-h-screen bg-[var(--background)] pt-32 md:pt-40 pb-32 px-6">
       <div className="max-w-7xl mx-auto">
 
         {/* Header & Filter */}
@@ -56,8 +56,12 @@ export default function JournalPage() {
             {featured ? (
               <div className="mb-16">
                 <Link href={`/journal/${featured.slug}`} className="group block">
-                  <div className="bg-[var(--secondary)] rounded-xl p-8 md:p-16 border border-[var(--primary)] border-opacity-10 flex flex-col md:flex-row gap-12 items-center transition-all hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] hover:border-[var(--accent)] hover:border-opacity-40">
-                    <div className="flex-1">
+                  <div className="bg-[var(--secondary)] rounded-xl overflow-hidden border border-[var(--primary)] border-opacity-10 flex flex-col md:flex-row items-stretch transition-all hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] hover:border-[var(--accent)] hover:border-opacity-40">
+                    <div 
+                      className="w-full md:w-1/2 h-64 md:h-auto bg-cover bg-center"
+                      style={{ backgroundImage: `url('${featured.image || 'https://images.unsplash.com/photo-1455390582262-044cdead2708?q=80&w=1600&auto=format&fit=crop'}')` }}
+                    />
+                    <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
                       <div className="flex items-center gap-4 mb-6">
                         <span className="bg-[var(--primary)] text-[var(--background)] px-3 py-1 text-[10px] uppercase tracking-widest rounded-full font-bold">
                           {featured.category}
@@ -100,23 +104,29 @@ export default function JournalPage() {
                     transition={{ delay: idx * 0.1 }}
                   >
                     <Link href={`/journal/${article.slug}`} className="group block h-full">
-                      <div className="h-full bg-[var(--background)] p-8 rounded border border-[var(--primary)] border-opacity-10 hover:border-[var(--accent)] hover:shadow-lg transition-all flex flex-col">
-                        <div className="flex justify-between items-center mb-6">
-                          <span className="text-[10px] uppercase tracking-widest text-[var(--accent)] font-bold">{article.category}</span>
-                          <span className="text-[10px] uppercase tracking-widest text-[var(--primary)] opacity-40">{article.readTime}</span>
+                      <div className="h-full bg-[var(--background)] rounded-xl overflow-hidden border border-[var(--primary)] border-opacity-10 hover:border-[var(--accent)] hover:shadow-lg transition-all flex flex-col">
+                        <div 
+                          className="w-full h-48 bg-cover bg-center"
+                          style={{ backgroundImage: `url('${article.image || 'https://images.unsplash.com/photo-1455390582262-044cdead2708?q=80&w=1600&auto=format&fit=crop'}')` }}
+                        />
+                        <div className="p-8 flex flex-col flex-grow">
+                          <div className="flex justify-between items-center mb-6">
+                            <span className="text-[10px] uppercase tracking-widest text-[var(--accent)] font-bold">{article.category}</span>
+                            <span className="text-[10px] uppercase tracking-widest text-[var(--primary)] opacity-40">{article.readTime}</span>
+                          </div>
+                          <h3 className="font-serif text-3xl text-[var(--primary)] mb-4 group-hover:text-[var(--accent)] transition-colors line-clamp-2">
+                            {article.title}
+                          </h3>
+                          <p className="font-sans text-sm text-[var(--foreground)] opacity-70 flex-grow mb-8 line-clamp-3 leading-relaxed">
+                            {article.excerpt}
+                          </p>
+                          <span className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-widest text-[var(--primary)] font-bold opacity-50 group-hover:opacity-100 group-hover:text-[var(--accent)] transition-all">
+                            Read
+                            <svg className="w-3 h-3 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                          </span>
                         </div>
-                        <h3 className="font-serif text-3xl text-[var(--primary)] mb-4 group-hover:text-[var(--accent)] transition-colors line-clamp-2">
-                          {article.title}
-                        </h3>
-                        <p className="font-sans text-sm text-[var(--foreground)] opacity-70 flex-grow mb-8 line-clamp-3 leading-relaxed">
-                          {article.excerpt}
-                        </p>
-                        <span className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-widest text-[var(--primary)] font-bold opacity-50 group-hover:opacity-100 group-hover:text-[var(--accent)] transition-all">
-                          Read
-                          <svg className="w-3 h-3 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                          </svg>
-                        </span>
                       </div>
                     </Link>
                   </motion.div>
