@@ -18,12 +18,12 @@ export default function ChapterProgress({ totalChapters, activeChapter }: Chapte
           <div
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               activeChapter === chapter
-                ? "bg-[var(--accent)] scale-125"
-                : "bg-[var(--primary)] opacity-20 hover:opacity-100"
+                ? "bg-accent scale-125"
+                : "bg-primary opacity-20 hover:opacity-100"
             }`}
           />
           <span
-            className={`absolute right-8 top-1/2 -translate-y-1/2 font-sans text-xs font-semibold uppercase tracking-widest text-[var(--accent)] transition-all duration-300 ${
+            className={`absolute right-8 top-1/2 -translate-y-1/2 font-sans text-xs font-semibold uppercase tracking-widest text-accent transition-all duration-300 ${
               activeChapter === chapter ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"
             }`}
           >

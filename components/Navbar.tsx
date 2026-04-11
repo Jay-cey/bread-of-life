@@ -24,11 +24,11 @@ export default function Navbar() {
             <Link href="/verses" className="text-[var(--primary)] hover:text-[var(--accent)] font-sans transition-colors text-sm uppercase tracking-widest font-medium">
               Verses
             </Link>
-            <Link href="/daily" className="text-[var(--primary)] hover:text-[var(--accent)] font-sans transition-colors text-sm uppercase tracking-widest font-medium">
-              Daily
+            <Link href="/journal" className="text-[var(--primary)] hover:text-[var(--accent)] font-sans transition-colors text-sm uppercase tracking-widest font-medium">
+              Journal
             </Link>
-            <Link href="/prayer" className="text-[var(--primary)] hover:text-[var(--accent)] font-sans transition-colors text-sm uppercase tracking-widest font-medium">
-              Prayer
+            <Link href="/testimonies" className="text-[var(--primary)] hover:text-[var(--accent)] font-sans transition-colors text-sm uppercase tracking-widest font-medium">
+              Testimonies
             </Link>
           </div>
 

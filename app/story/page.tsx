@@ -123,7 +123,7 @@ function ChapterSection({ data, setActiveChapter }: { data: typeof chaptersData[
       />
       
       {/* Scrollable Content Side */}
-      <div className="w-full md:w-1/2 p-6 md:p-16 lg:p-24 flex items-center bg-[var(--background)]">
+      <div className="w-full md:w-1/2 p-6 md:p-16 lg:p-24 flex items-center bg-background">
         <motion.div 
           className="max-w-xl w-full"
           initial={{ opacity: 0, y: 50 }}
@@ -132,19 +132,19 @@ function ChapterSection({ data, setActiveChapter }: { data: typeof chaptersData[
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="flex items-center gap-4 mb-6">
-            <span className="font-serif text-5xl md:text-7xl text-[var(--accent)] opacity-30 font-bold tracking-tighter">
+            <span className="font-serif text-5xl md:text-7xl text-accent opacity-30 font-bold tracking-tighter">
               {data.id.toString().padStart(2, '0')}
             </span>
-            <span className="font-sans text-sm tracking-widest uppercase text-[var(--accent-secondary)] font-bold">
+            <span className="font-sans text-sm tracking-widest uppercase text-accent-secondary font-bold">
               {data.name}
             </span>
           </div>
           
-          <h2 className="font-serif text-4xl md:text-5xl text-[var(--primary)] mb-8 leading-tight">
+          <h2 className="font-serif text-4xl md:text-5xl text-primary mb-8 leading-tight">
             "{data.title}"
           </h2>
 
-          <div className="space-y-6 text-lg text-[var(--foreground)] opacity-80 font-sans leading-relaxed">
+          <div className="space-y-6 text-lg text-foreground opacity-80 font-sans leading-relaxed">
             {data.paragraphs.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
@@ -185,7 +185,7 @@ export default function StoryPage() {
   };
 
   return (
-    <div className="bg-[var(--background)] relative">
+    <div className="bg-background relative">
       <ChapterProgress totalChapters={chaptersData.length} activeChapter={activeChapter} />
       
       {chaptersData.map((chap) => (
@@ -199,22 +199,22 @@ export default function StoryPage() {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
-            className="fixed bottom-0 left-0 right-0 z-50 p-4 border-t border-[var(--secondary)] bg-[var(--nav-bg)] backdrop-blur-md shadow-[0_-10px_40px_rgba(0,0,0,0.1)] flex justify-between items-center"
+            className="fixed bottom-0 left-0 right-0 z-50 p-4 border-t border-secondary bg-nav-bg backdrop-blur-md shadow-[0_-10px_40px_rgba(0,0,0,0.1)] flex justify-between items-center"
           >
             <div className="max-w-7xl mx-auto flex w-full flex-col sm:flex-row justify-between items-center px-4">
-              <span className="text-[var(--primary)] font-sans text-sm md:text-base font-medium">
-                Welcome back. You left off at <strong className="text-[var(--accent)] pl-1">Chapter {maxChapterReached}</strong>
+              <span className="text-primary font-sans text-sm md:text-base font-medium">
+                Welcome back. You left off at <strong className="text-accent pl-1">Chapter {maxChapterReached}</strong>
               </span>
               <div className="mt-3 sm:mt-0 flex gap-4 items-center">
                 <button 
                   onClick={() => setShowResumeBanner(false)}
-                  className="text-xs uppercase tracking-wider text-[var(--primary)] opacity-50 hover:opacity-100 transition-opacity font-sans"
+                  className="text-xs uppercase tracking-wider text-primary opacity-50 hover:opacity-100 transition-opacity font-sans"
                 >
                   Dismiss
                 </button>
                 <button
                   onClick={handleResume}
-                  className="px-6 py-2 bg-[var(--accent)] text-[var(--background)] hover:bg-[var(--accent-secondary)] hover:text-white transition-colors text-sm font-sans uppercase tracking-wider rounded"
+                  className="px-6 py-2 bg-accent text-background hover:bg-accent-secondary hover:text-white transition-colors text-sm font-sans uppercase tracking-wider rounded"
                 >
                   Continue Story →
                 </button>
