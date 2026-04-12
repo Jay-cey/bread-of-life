@@ -21,14 +21,22 @@ export const metadata: Metadata = {
   title: "Bread of Life | A Spiritually Immersive Journey",
   description: "Experience a spiritually immersive, editorial-quality journey into the Bread of Life. Explore the sacred story, verses, and testimonies.",
   manifest: "/manifest.json",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/icon-192x192.png",
+  },
   openGraph: {
     title: "Bread of Life",
     description: "Experience a spiritually immersive, editorial-quality journey into the Bread of Life.",
     url: "https://breadoflife.vercel.app",
     siteName: "Bread of Life",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/api/og?title=Bread+of+Life&verse=A+spiritually+immersive+journey&type=Bread+of+Life", width: 1200, height: 630 }],
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/api/og?title=Bread+of+Life&verse=A+spiritually+immersive+journey&type=Bread+of+Life"],
   },
 };
 
