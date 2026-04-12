@@ -1,0 +1,19 @@
+{
+  "Nav": {
+    "story": "The Story",
+    "verses": "Verses",
+    "daily": "Daily Bread",
+    "journal": "Journal",
+    "pray": "Pray",
+    "testimonies": "Testimonies",
+    "who": "Who is Jesus?"
+  },
+  "Hero": {
+    "headline": "Encounter the Living Word",
+    "subtitle": "A spiritually immersive journey into the Bread of Life.",
+    "cta": "Read The Story"
+  },
+  "Footer": {
+    "tagline": "Truth. Grace. Eternal Life."
+  }
+}

@@ -6,11 +6,19 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
+import { useTranslations, useLocale } from 'next-intl';
+import { useRouter } from 'next/navigation';
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  const router = useRouter();
+  const locale = useLocale();
+  const t = useTranslations("Nav");
+  const isHome = pathname === "/" || pathname === "/en" || pathname === "/yo";
+  
+  if (pathname.includes('/link')) return null;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -41,12 +49,21 @@ export default function Navbar() {
   const isTransparent = isHome && !scrolled && !isMobileMenuOpen;
 
   const links = [
-    { href: "/story", label: "Story" },
-    { href: "/who-is-jesus", label: "Who is Jesus" },
-    { href: "/verses", label: "Verses" },
-    { href: "/journal", label: "Journal" },
-    { href: "/testimonies", label: "Testimonies" },
+    { href: "/story", label: t("story") },
+    { href: "/who-is-jesus", label: t("who") },
+    { href: "/verses", label: t("verses") },
+    { href: "/journal", label: t("journal") },
+    { href: "/testimonies", label: t("testimonies") },
   ];
+
+  const toggleLanguage = () => {
+    const newLocale = locale === 'en' ? 'yo' : 'en';
+    // Strip current locale from path if present, then prepend new locale
+    const strippedPath = pathname.replace(/^\/(en|yo)/, '') || '/';
+    // If the new locale is 'en' (default), we don't necessarily need the prefix based on 'as-needed', 
+    // but navigating to /en/... or just /... works since middleware handles it.
+    router.push(`/${newLocale}${strippedPath === '/' ? '' : strippedPath}`);
+  };
 
   return (
     <nav
@@ -89,7 +106,17 @@ export default function Navbar() {
           </div>
 
           {/* Right side controls */}
-          <div className="flex-shrink-0 flex items-center justify-end gap-4">
+          <div className="flex-shrink-0 flex items-center justify-end gap-3 md:gap-4">
+            <button
+              onClick={toggleLanguage}
+              className={`font-sans text-xs uppercase tracking-widest font-bold px-2 py-1 rounded border transition-colors ${
+                isTransparent 
+                  ? "text-white border-white/30 hover:border-white" 
+                  : "text-primary border-primary/20 hover:border-primary"
+              }`}
+            >
+              {locale === 'en' ? 'EN' : 'YO'}
+            </button>
             <DarkModeToggle />
             
             {/* Mobile Hamburger Toggle */}

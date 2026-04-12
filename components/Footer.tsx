@@ -2,11 +2,17 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
+  const t = useTranslations("Footer");
+  const pathname = usePathname();
+
+  if (pathname.includes('/link')) return null;
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,7 +51,7 @@ export default function Footer() {
               Bread of Life
             </Link>
             <p className="font-sans text-sm text-[var(--primary)] opacity-70 mb-8 leading-relaxed">
-              A spiritually immersive journey. Discover the sacred story, reflect on the verses, read the journal, and explore real testimonies.
+              {t("tagline")}
             </p>
             <p className="text-xs text-[var(--primary)] opacity-50 font-sans">
               &copy; {new Date().getFullYear()} Bread of Life. All rights reserved.
