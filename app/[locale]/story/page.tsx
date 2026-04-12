@@ -214,7 +214,7 @@ export default function StoryPage() {
   };
 
   return (
-    <div className="bg-background relative">
+    <div className="bg-background relative pt-20 md:pt-0">
       <ChapterProgress totalChapters={chaptersData.length} activeChapter={activeChapter} />
       
       {chaptersData.map((chap, idx) => (

@@ -17,7 +17,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://breadoflife.vercel.app"),
+  metadataBase: new URL("https://bread-of-life-tawny.vercel.app/"),
   title: "Bread of Life | A Spiritually Immersive Journey",
   description: "Experience a spiritually immersive, editorial-quality journey into the Bread of Life. Explore the sacred story, verses, and testimonies.",
   manifest: "/manifest.json",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Bread of Life",
     description: "Experience a spiritually immersive, editorial-quality journey into the Bread of Life.",
-    url: "https://breadoflife.vercel.app",
+    url: "https://bread-of-life-tawny.vercel.app/",
     siteName: "Bread of Life",
     images: [{ url: "/api/og?title=Bread+of+Life&verse=A+spiritually+immersive+journey&type=Bread+of+Life", width: 1200, height: 630 }],
     locale: "en_US",
@@ -93,7 +93,7 @@ export default async function RootLayout({
       <body className="min-h-full flex flex-col font-sans">
         <NextIntlClientProvider messages={messages}>
           <Navbar />
-          <main className="flex-grow">
+          <main className="grow">
             {children}
           </main>
           <Footer />

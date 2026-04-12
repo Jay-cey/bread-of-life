@@ -16,7 +16,9 @@ export default function Navbar() {
   const router = useRouter();
   const locale = useLocale();
   const t = useTranslations("Nav");
-  const isHome = pathname === "/" || pathname === "/en" || pathname === "/yo";
+  const isHome = pathname === "/" || 
+                 pathname === `/${locale}` || 
+                 pathname === `/${locale}/`;
   
   if (pathname.includes('/link')) return null;
 
@@ -77,7 +79,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
 
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Link
               href="/"
               className={`font-serif text-2xl font-bold transition-colors duration-300 ${

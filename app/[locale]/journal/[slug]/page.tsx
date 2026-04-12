@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   const ogUrl = new URL(
     `/api/og?title=${encodeURIComponent(article.title)}&verse=${encodeURIComponent(article.subtitle)}&type=Journal`,
-    'https://breadoflife.vercel.app'
+    'https://bread-of-life-tawny.vercel.app'
   );
 
   return {

@@ -152,7 +152,7 @@ export default function Home() {
 
         {/* II — Verse Discovery | NAVY, image left */}
         <Link href="/verses" className="group block">
-          <div className="bg-[#0B1437] grid grid-cols-1 md:grid-cols-2 border-t border-white/[0.06] group-hover:border-[#C9A84C]/30 transition-colors duration-500 min-h-[460px]">
+          <div className="bg-[#0B1437] grid grid-cols-1 md:grid-cols-2 border-t border-white/6 group-hover:border-[#C9A84C]/30 transition-colors duration-500 min-h-[460px]">
             <div className="relative h-[320px] md:h-auto overflow-hidden order-1">
               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1528&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-1000 ease-out" />
               <div className="absolute inset-0 bg-linear-to-r from-transparent to-[#0B1437]/20" />
