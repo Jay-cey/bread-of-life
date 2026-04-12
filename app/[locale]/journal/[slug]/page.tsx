@@ -5,14 +5,18 @@ import ScriptureBlock from "@/components/ScriptureBlock";
 
 export const dynamic = "force-static";
 
+type ArticlePageProps = {
+  params: Promise<{ slug: string }>;
+};
+
 export async function generateStaticParams() {
   return journalData.map((article) => ({
     slug: article.slug,
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export async function generateMetadata({ params }: ArticlePageProps) {
+  const { slug } = await params;
   const article = journalData.find((a) => a.slug === slug);
   if (!article) return {};
 
@@ -40,8 +44,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function ArticlePage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function ArticlePage({ params }: ArticlePageProps) {
+  const { slug } = await params;
   const article = journalData.find((a) => a.slug === slug);
 
   if (!article) {
