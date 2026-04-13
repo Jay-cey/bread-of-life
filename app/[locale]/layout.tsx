@@ -22,14 +22,9 @@ import { getTranslations } from 'next-intl/server';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Hero' });
-  const f = await getTranslations({ locale, namespace: 'Footer' });
 
   const title = "Bread of Life";
   const description = t('subtitle');
-  const ogUrl = new URL(
-    `/api/og?title=${encodeURIComponent(title)}&verse=${encodeURIComponent(description)}&type=Bread+of+Life`,
-    'https://bread-of-life-tawny.vercel.app'
-  );
 
   return {
     metadataBase: new URL("https://bread-of-life-tawny.vercel.app/"),
@@ -54,13 +49,22 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: description,
       url: "https://bread-of-life-tawny.vercel.app/",
       siteName: title,
-      images: [{ url: ogUrl.toString(), width: 1200, height: 630 }],
+      images: [
+        {
+          url: "/img1.png",
+          width: 1200,
+          height: 630,
+          alt: "Bread of Life"
+        }
+      ],
       locale: locale === 'yo' ? 'yo_NG' : 'en_US',
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      images: [ogUrl.toString()],
+      title: title,
+      description: description,
+      images: ["/img1.png"],
     },
   };
 }
