@@ -1,0 +1,46 @@
+{
+  "name": "Bread of Life",
+  "short_name": "BreadOfLife",
+  "description": "A spiritually immersive, editorial-quality journey into the Bread of Life.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1437",
+  "theme_color": "#0B1437",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["lifestyle", "education", "books"],
+  "screenshots": [
+    {
+      "src": "/api/og?title=Bread+of+Life&verse=A+spiritually+immersive+journey&type=Bread+of+Life",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Bread of Life Desktop"
+    }
+  ]
+}

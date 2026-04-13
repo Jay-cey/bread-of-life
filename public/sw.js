@@ -1,5 +1,5 @@
 const CACHE_NAME = 'bread-of-life-v2';
-const OFFLINE_FALLBACKS = ['/offline', '/en/offline', '/yo/offline'];
+const OFFLINE_FALLBACKS = ['/en/offline', '/yo/offline'];
 const PRECACHE_URLS = [
   '/',
   '/en',
