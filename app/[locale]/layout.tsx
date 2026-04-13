@@ -17,38 +17,53 @@ const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://bread-of-life-tawny.vercel.app/"),
-  title: "Bread of Life | A Spiritually Immersive Journey",
-  description: "Experience a spiritually immersive, editorial-quality journey into the Bread of Life. Explore the sacred story, verses, and testimonies.",
-  manifest: "/manifest.webmanifest",
-  icons: {
-    icon: [
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon.ico" }
-    ],
-    apple: "/apple-touch-icon.png",
-  },
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "default",
-    title: "Bread of Life",
-  },
-  openGraph: {
-    title: "Bread of Life",
-    description: "Experience a spiritually immersive, editorial-quality journey into the Bread of Life.",
-    url: "https://bread-of-life-tawny.vercel.app/",
-    siteName: "Bread of Life",
-    images: [{ url: "/api/og?title=Bread+of+Life&verse=A+spiritually+immersive+journey&type=Bread+of+Life", width: 1200, height: 630 }],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    images: ["/api/og?title=Bread+of+Life&verse=A+spiritually+immersive+journey&type=Bread+of+Life"],
-  },
-};
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Hero' });
+  const f = await getTranslations({ locale, namespace: 'Footer' });
+
+  const title = "Bread of Life";
+  const description = t('subtitle');
+  const ogUrl = new URL(
+    `/api/og?title=${encodeURIComponent(title)}&verse=${encodeURIComponent(description)}&type=Bread+of+Life`,
+    'https://bread-of-life-tawny.vercel.app'
+  );
+
+  return {
+    metadataBase: new URL("https://bread-of-life-tawny.vercel.app/"),
+    title: `${title} | A Spiritually Immersive Journey`,
+    description: description,
+    manifest: "/manifest.webmanifest",
+    icons: {
+      icon: [
+        { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/favicon.ico" }
+      ],
+      apple: "/apple-touch-icon.png",
+    },
+    appleWebApp: {
+      capable: true,
+      statusBarStyle: "default",
+      title: title,
+    },
+    openGraph: {
+      title: title,
+      description: description,
+      url: "https://bread-of-life-tawny.vercel.app/",
+      siteName: title,
+      images: [{ url: ogUrl.toString(), width: 1200, height: 630 }],
+      locale: locale === 'yo' ? 'yo_NG' : 'en_US',
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: [ogUrl.toString()],
+    },
+  };
+}
 
 export const viewport: Viewport = {
   themeColor: "#0B1437",
