@@ -147,6 +147,8 @@ The project is configured as a PWA with:
 - client registration component at [components/ServiceWorkerRegistration.tsx](C:/Users/olana/OneDrive/Documents/Christ/bread-of-life/components/ServiceWorkerRegistration.tsx:1)
 - offline fallback page at [app/[locale]/offline/page.tsx](C:/Users/olana/OneDrive/Documents/Christ/bread-of-life/app/[locale]/offline/page.tsx:1)
 
+`app/manifest.ts` is the single source of truth for the app manifest and is served by Next.js as `/manifest.webmanifest`.
+
 Current PWA behavior includes:
 
 - installable app manifest
@@ -260,7 +262,6 @@ Before deploying:
 
 ## Future Improvements
 
-- remove stale duplicate static manifest files in `public/` if they are no longer needed
 - clean up current lint violations
 - add typed schemas for local JSON content
 - strengthen offline caching strategy for additional content routes
