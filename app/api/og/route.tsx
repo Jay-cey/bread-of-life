@@ -55,12 +55,10 @@ export async function GET(request: Request) {
             <div
               style={{
                 fontSize: '84px',
-                fontStyle: 'italic',
                 fontWeight: 600,
                 color: '#FFFFFF',
                 lineHeight: 1.1,
                 marginBottom: '40px',
-                textShadow: '0 4px 30px rgba(0,0,0,0.5)',
               }}
             >
               "{title}"
@@ -71,7 +69,6 @@ export async function GET(request: Request) {
                 fontSize: '36px',
                 color: 'rgba(255,255,255,0.7)',
                 marginTop: 'auto',
-                fontFamily: 'sans-serif'
               }}
             >
               {verse}
