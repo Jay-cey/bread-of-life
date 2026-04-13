@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackgroundAudio from "@/components/BackgroundAudio";
+import ServiceWorkerRegistration from "@/components/ServiceWorkerRegistration";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -20,10 +21,15 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://bread-of-life-tawny.vercel.app/"),
   title: "Bread of Life | A Spiritually Immersive Journey",
   description: "Experience a spiritually immersive, editorial-quality journey into the Bread of Life. Explore the sacred story, verses, and testimonies.",
-  manifest: "/manifest.json",
+  manifest: "/manifest.webmanifest",
   icons: {
     icon: "/favicon.ico",
-    apple: "/icon-192x192.png",
+    apple: "/apple-touch-icon.png",
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Bread of Life",
   },
   openGraph: {
     title: "Bread of Life",
@@ -40,6 +46,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#0B1437",
+};
+
 // Script to inject initially to prevent FOUC (Flash of Unstyled Content) on dark mode
 const themeScript = `
   (function() {
@@ -53,18 +63,6 @@ const themeScript = `
       }
     } catch (e) {}
   })();
-`;
-
-// Script to register PWA Service Worker
-const swScript = `
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/sw.js').then(
-        function(registration) { console.log('SW registered'); },
-        function(err) { console.log('SW registration failed: ', err); }
-      );
-    });
-  }
 `;
 
 import { NextIntlClientProvider } from 'next-intl';
@@ -88,9 +86,9 @@ export default async function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-        <script dangerouslySetInnerHTML={{ __html: swScript }} />
       </head>
       <body className="min-h-full flex flex-col font-sans">
+        <ServiceWorkerRegistration />
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main className="grow">

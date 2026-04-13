@@ -55,7 +55,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   return (
     <div className="min-h-screen bg-background pb-32">
       {/* Immersive Banner Header */}
-      <header className="relative w-full h-[60vh] min-h-[400px] flex items-end pb-16 px-6 pt-40">
+      <header className="relative w-full h-[60vh] min-h-100 flex items-end pb-16 px-6 pt-40">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url('${article.image || 'https://images.unsplash.com/photo-1455390582262-044cdead2708?q=80&w=1600&auto=format&fit=crop'}')` }}
