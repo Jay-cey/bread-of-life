@@ -135,10 +135,10 @@ function ChapterSection({ data, setActiveChapter }: { data: typeof chaptersData[
       <div
         className={[
           // Mobile: normal flow, fixed height, no sticky
-          "w-full h-[45vw] min-h-[220px] max-h-[380px]",
+          "w-full h-[45vw] min-h-55 max-h-95",
           "bg-cover bg-center brightness-75 dark:brightness-50 transition-all duration-700",
           // Desktop: half-width, full viewport height, sticky
-          "md:w-1/2 md:h-auto md:max-h-none md:min-h-0 md:sticky md:top-0 md:self-start md:h-screen md:brightness-100",
+          "md:w-1/2 md:max-h-none md:min-h-0 md:sticky md:top-0 md:self-start md:h-screen md:brightness-100",
         ].join(" ")}
         style={{ backgroundImage: `url('${data.bgUrl}')` }}
       />
